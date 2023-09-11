@@ -1,0 +1,45 @@
+{% extends './base.html' %}
+{% block title %}Edición de Persona{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 offset-md-4">
+    <h2>Edición de Persona</h2>
+    <div class="card">
+      <div class="card-body">
+        <form action="{% url 'editar_persona' id_persona=persona.id_persona %}" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" value="{{ persona.dni }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" value="{{ persona.apellidos }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" name="nombres" value="{{ persona.nombres }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" value="{{ persona.telefono }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ persona.email }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" value="{{ persona.direccion }}" class="form-control">
+          </div>
+ 
+          <div class="form-group">
+            <button type="submit" class="btn btn-success form-control">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
