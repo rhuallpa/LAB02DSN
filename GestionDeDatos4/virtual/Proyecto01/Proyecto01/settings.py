@@ -16,13 +16,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-
-
-
-
-
-
 import environ
 
 env = environ.Env()
@@ -42,7 +35,7 @@ SECRET_KEY = 'django-insecure-3*1^+kvgner578vta8y7(iyep5pmm34-$+udxr=h13%wzdv@-k
 DEBUG = False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost']
 
 # Application definition
 
